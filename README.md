@@ -1,6 +1,6 @@
-# ELM STARTER
+# ELM APP
 
-Starter kit for reusing elm functions. Exports from a module like this should expose functions, not state management. It has a package.json so you can include it in a project via npm or yarn (I prefer yarn b/c it supports semver on git urls). THIS IS A WORK IN PROGRESS.
+Example application which consumes a library of functions - see [elm-starter](https://github.com/tommymessbauer/elm-starter)
 
 This is a good way to get started with Elm within a project using webpack and other common infrastructure.
 
@@ -9,7 +9,7 @@ This is a good way to get started with Elm within a project using webpack and ot
 This repo should be cloned, then renamed/re-initialized for use in a component.
 
 ```bash
-git clone git@github.com:tommymessbauer/elm-starter.git your_folder
+git clone git@github.com:tommymessbauer/elm-app.git your_folder
 cd your_folder
 rm -rf .git
 git init
@@ -27,9 +27,29 @@ After starting, a local dev server with HMR will be running at localhost:3000. W
 
 # ANATOMY OF THIS COMPONENT
 
-* `./src/elm/` - Put your elm functions here. 
+* `./src/elm/` - Put Main.elm and other files here.
 * `./src/styles` - Put your sass here.
 
-# EXPOSING MODULES
+# USING PRIVATE GIT URLS
 
-When you are ready to publish, be sure to put the modules you wish to expose in `elm-package.json` in the `exposed-modules` prop so they can be imported to projects. TODO: make sure this is correct and works.
+This example relies on [elm-github-install](https://github.com/gdotdesign/elm-github-install) which allows the inclusion of private repos. This is done in the `elm-package.json` with the `dependency-sources` field.
+
+```
+{
+	"version": "0.0.0",
+	"summary": "App that consumes an external library",
+	"repository": "https://github.com/tommymessbauer/elm-app.git",
+	"license": "MIT",
+	"source-directories": [ "src/elm" ],
+	"exposed-modules": [  ],
+	"dependencies": {
+		"tommymessbauer/elm-starter": "0.0.0 <= v < 1.0.0",
+		"elm-lang/core": "5.0.0 <= v < 6.0.0",
+		"elm-lang/html": "2.0.0 <= v < 3.0.0"
+	},
+	"dependency-sources": {
+		"tommymessbauer/elm-starter": "git@github.com:tommymessbauer/elm-starter.git"		
+	},
+	"elm-version": "0.18.0 <= v < 0.19.0"
+}
+```
