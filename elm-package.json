@@ -1,0 +1,17 @@
+{
+	"version": "0.0.0",
+	"summary": "App that consumes an external library",
+	"repository": "https://github.com/tommymessbauer/elm-app.git",
+	"license": "MIT",
+	"source-directories": [ "src/elm" ],
+	"exposed-modules": [  ],
+	"dependencies": {
+		"tommymessbauer/elm-starter": "0.0.0 <= v < 1.0.0",
+		"elm-lang/core": "5.0.0 <= v < 6.0.0",
+		"elm-lang/html": "2.0.0 <= v < 3.0.0"
+	},
+	"dependency-sources": {
+		"tommymessbauer/elm-starter": "git@github.com:tommymessbauer/elm-starter.git"		
+	},
+	"elm-version": "0.18.0 <= v < 0.19.0"
+}
