@@ -1,6 +1,6 @@
 {
 	"name": "elm-app",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Consumes an elm library",
 	"main": "index.js",
 	"repository": "git@github.com:tommymessbauer/elm-app.git",
